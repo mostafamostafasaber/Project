@@ -6,19 +6,19 @@ import sys
 
 #print ((sys.argv[1]))
 
-#Input_video_path=sys.argv[1]
-#Output_video_path=sys.argv[2]
+Input_video_path=sys.argv[1]
+Output_video_path=sys.argv[2]
 #quit()
 
-Input_video_path='E:/kolya/real project/image_project/project_video.mp4'
-Output_video_path='output_video_1.mp4'
+#Input_video_path='E:/kolya/real project/image_project/project_video.mp4'
+#Output_video_path='output_video_1.mp4'
 
 #'project_video.mp4'
  #'output-video.mp4'
 
 # Make sure the video file is in the same directory as your code
 filename = Input_video_path
-file_size = (1280,720) # Assumes 1920x1080 mp4
+file_size = (1280,720) # Assumes 1280,720 mp4
 scale_ratio = 1 # Option to scale to fraction of original size. 
 
 # We want to save the output to a video file
@@ -82,10 +82,10 @@ class Lane:
     self.width = width
     self.height = height
     self.roi_points = np.float32([
-      (int(0.456*width),int(0.544*height)), # Top-left corner
-      (0, height-1), # Bottom-left corner     
+      (int(0.456*width),int(0.68*height)), # Top-left corner
+      (int(0.1*width), height-1), # Bottom-left corner     
       (int(0.958*width),height-1), # Bottom-right corner
-      (int(0.6183*width),int(0.544*height)) # Top-right corner
+      (int(0.6183*width),int(0.68*height)) # Top-right corner
     ])
     self.padding = int(0.25 * width) # padding from side of the image in pixels
     self.desired_roi_points = np.float32([
